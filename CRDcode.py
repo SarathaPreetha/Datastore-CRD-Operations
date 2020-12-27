@@ -1,3 +1,4 @@
+// Import CRDcode as a package and use or access the following functions such as create,read and delete.
 import threading 
 from threading import*
 import time
