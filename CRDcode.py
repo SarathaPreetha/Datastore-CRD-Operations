@@ -10,11 +10,11 @@ def create(key,value,timeout=0):
         if(key.isalpha()):
             if len(dict)<(1024*1020*1024) and value<=(16*1024*1024): 
                 if timeout==0:
-                    l=[value,timeout]
+                    b=[value,timeout]
                 else:
-                    l=[value,time.time()+timeout]
+                    b=[value,time.time()+timeout]
                 if len(key)<=32: 
-                    dict[key]=l
+                    dict[key]=b
             else:
                 print("error: Memory limit exceeded!! ")
         else:
@@ -26,7 +26,7 @@ def read(key):
     else:
         a=dict[key]
         if a[1]!=0:
-            if time.time()<a[1]: #comparing the present time with expiry time
+            if time.time()<a[1]: 
                 string=str(key)+":"+str(a[0]) 
                 return string
             else:
